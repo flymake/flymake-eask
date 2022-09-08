@@ -21,8 +21,8 @@ In your `Eask` file:
 In your `init.el`:
 
 ```elisp
-(eval-after-load flymake
-  '(add-hook flymake-mode-hook #'flymake-eask-setup))
+(require 'flymake-eask)
+(add-hook 'eask-mode-hook 'flymake-eask-load)
 ```
 
 ## Contribute

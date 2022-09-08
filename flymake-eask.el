@@ -1,4 +1,4 @@
-;;; flymake-eask.el ---   -*- lexical-binding: t; -*-
+;;; flymake-eask.el --- Eask support in Flymake  -*- lexical-binding: t; -*-
 
 ;; Copyright (C) 2022  Shen, Jen-Chieh
 
@@ -6,8 +6,8 @@
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; URL: https://github.com/emacs-eask/flymake-eask
 ;; Version: 0.1.0
-;; Package-Requires: ((emacs "26.1"))
-;; Keywords:
+;; Package-Requires: ((emacs "26.1") (flymake-easy "0.1"))
+;; Keywords: lisp eask
 
 ;; This file is not part of GNU Emacs.
 
@@ -26,12 +26,41 @@
 
 ;;; Commentary:
 ;;
-;;
+;; Eask support in Flymake.
 ;;
 
 ;;; Code:
 
+(require 'flymake)
 
+(require 'flymake-easy)
+
+(defgroup flymake-eask nil
+  "Eask support for Flymake."
+  :prefix "flymake-eask-"
+  :group 'flymake
+  :link '(url-link :tag "Github" "https://github.com/emacs-eask/flymake-eask"))
+
+(defconst flymake-eask-err-line-patterns
+  '(("^\\(.*\\):\\([0-9]+\\):\\([0-9]+\\): \\(Error\\|Warning\\): \\(.*\\)$" 1 2 3 5)))
+
+(defun flymake-eask-command (filename)
+  "Construct a command that flymake can use to check Eask source."
+  (list "eask" "check-eask" filename))
+
+;;;###autoload
+(defun flymake-eask-load ()
+  "Configure flymake mode to check the current buffer's Eask syntax.
+
+This function is designed to be called in `eask-mode-hook'; it does not alter
+flymake's global configuration, so function `flymake-mode' alone will not
+suffice."
+  (interactive)
+  (when (eq 'eask-mode major-mode)
+    (flymake-easy-load 'flymake-eask-command
+                       flymake-eask-err-line-patterns
+                       'tempdir
+                       "eask")))
 
 (provide 'flymake-eask)
 ;;; flymake-eask.el ends here
