@@ -2,7 +2,7 @@
          "0.1.0"
          "Eask support in Flymake")
 
-(website-url "https://github.com/emacs-eask/flymake-eask")
+(website-url "https://github.com/flymake/flymake-eask")
 (keywords "lisp" "eask")
 
 (package-file "flymake-eask.el")

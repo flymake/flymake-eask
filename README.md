@@ -4,7 +4,7 @@
 # flymake-eask
 > Eask support in Flymake
 
-[![CI](https://github.com/emacs-eask/flymake-eask/actions/workflows/test.yml/badge.svg)](https://github.com/emacs-eask/flymake-eask/actions/workflows/test.yml)
+[![CI](https://github.com/flymake/flymake-eask/actions/workflows/test.yml/badge.svg)](https://github.com/flymake/flymake-eask/actions/workflows/test.yml)
 
 ## 💾 Installation
 

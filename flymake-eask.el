@@ -4,7 +4,7 @@
 
 ;; Author: Shen, Jen-Chieh <jcs090218@gmail.com>
 ;; Maintainer: Shen, Jen-Chieh <jcs090218@gmail.com>
-;; URL: https://github.com/emacs-eask/flymake-eask
+;; URL: https://github.com/flymake/flymake-eask
 ;; Version: 0.1.0
 ;; Package-Requires: ((emacs "26.1") (flymake-easy "0.1"))
 ;; Keywords: lisp eask
