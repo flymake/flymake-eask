@@ -45,7 +45,7 @@
   '(("^\\(.*\\):\\([0-9]+\\):\\([0-9]+\\): \\(Error\\|Warning\\): \\(.*\\)$" 1 2 3 5)))
 
 (defun flymake-eask-command (filename)
-  "Construct a command that flymake can use to check Eask source."
+  "Construct a command that flymake can use to check Eask source (FILENAME)."
   (list "eask" "check-eask" filename))
 
 ;;;###autoload
