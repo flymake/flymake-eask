@@ -39,7 +39,7 @@
   "Eask support for Flymake."
   :prefix "flymake-eask-"
   :group 'flymake
-  :link '(url-link :tag "Github" "https://github.com/emacs-eask/flymake-eask"))
+  :link '(url-link :tag "Github" "https://github.com/flymake/flymake-eask"))
 
 (defconst flymake-eask-err-line-patterns
   '(("^\\(.*\\):\\([0-9]+\\):\\([0-9]+\\): \\(Error\\|Warning\\): \\(.*\\)$" 1 2 3 5)))
