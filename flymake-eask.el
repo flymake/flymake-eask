@@ -46,7 +46,7 @@
 
 (defun flymake-eask-command (filename)
   "Construct a command that flymake can use to check Eask source (FILENAME)."
-  (list "eask" "check-eask" filename))
+  (list "eask" "analyze" filename))
 
 ;;;###autoload
 (defun flymake-eask-load ()
